@@ -414,7 +414,7 @@ end
                                                       if getElementData(localPlayer, "downnn2") == false then
                                                          setElementData(localPlayer, "downnn2", true)
                                                          ifpFM = 
-                                                         setPedAnimation(source, "newAnimBlockFMM", "render", -1, false, false, false,true)
+                                                         setPedAnimation(localPlayer, "newAnimBlockFMM", "render", -1, false, false, false,true)
                                                       else
                                                          setElementData(localPlayer, "downnn2", false)
                                                          triggerServerEvent("anim.downn", localPlayer)
@@ -496,14 +496,14 @@ end
 
 
 
-                                       addEventHandler( "onClientResourceStart", getRootElement(),
+                                       addEventHandler( "onClientRelocalPlayerStart", getRootElement(),
                                        function ()
                                           setElementData(localPlayer,"status111",0)
                                           setElementData(localPlayer,"cr",0)
                                        end
                                        )
 
-                                       addEventHandler( "onClientResourceStop", getRootElement(),
+                                       addEventHandler( "onClientRelocalPlayerStop", getRootElement(),
                                        function ()
                                           setElementData(localPlayer,"status111",0)
                                           setElementData(localPlayer,"cr",0)
@@ -550,7 +550,7 @@ end
                                              elseif getElementData(localPlayer,"cr") == 30 then -- 1
                                                 if isMouseInPosition(1369, 240, 120, 120) and getKeyState("mouse1") then
                                                    playSound("SFX/click.mp3")
-                                                   setPedAnimation ( source, "ped", "SEAT_idle", -1, true, false, false )
+                                                   setPedAnimation ( localPlayer, "ped", "SEAT_idle", -1, true, false, false )
                                                 end
                                              end
 
@@ -565,7 +565,7 @@ end
                                              if getElementData(localPlayer,"cr") == 1 then
                                                 if isMouseInPosition(1500, 240, 120, 120) and getKeyState("mouse1") then
                                                    playSound("SFX/click.mp3")
-                                                   setPedAnimation(source, "abdominalandpushup", "Otji_2", -1, true, false)
+                                                   setPedAnimation(localPlayer, "abdominalandpushup", "Otji_2", -1, true, false)
                                                 end
                                                 -- الشرطة
                                              elseif getElementData(localPlayer,"cr") == 10 then
@@ -584,7 +584,7 @@ end
                                                 if isMouseInPosition(1500, 240, 120, 120) and getKeyState("mouse1") then
                                                    playSound("SFX/click.mp3")
                                                    
-                                                   setPedAnimation(source, "otur", "WEAPON_crouch", -1, true, false)
+                                                   setPedAnimation(localPlayer, "otur", "WEAPON_crouch", -1, true, false)
                                                 end
                                              end
 
@@ -599,7 +599,7 @@ end
                                              if getElementData(localPlayer,"cr") == 1 then
                                                 if isMouseInPosition(1369, 369, 120, 120) and getKeyState("mouse1") then
                                                    playSound("SFX/click.mp3")
-                                                   setPedAnimation(source, "yaslan", "Plyrlean_loop", -1, true, false)
+                                                   setPedAnimation(localPlayer, "yaslan", "Plyrlean_loop", -1, true, false)
                                                 end
                                                 -- الشرطة
                                              elseif getElementData(localPlayer,"cr") == 10 then
@@ -616,7 +616,7 @@ end
                                              elseif getElementData(localPlayer,"cr") == 30 then -- 1
                                                 if isMouseInPosition(1369, 369, 120, 120) and getKeyState("mouse1") then
                                                    playSound("SFX/click.mp3")
-                                                   setPedAnimation( source, "BEACH", "Lay_Bac_Loop", -1, true, false, false )
+                                                   setPedAnimation( localPlayer, "BEACH", "Lay_Bac_Loop", -1, true, false, false )
                                                 end
                                              end
                                           end
@@ -630,7 +630,7 @@ end
                                              if getElementData(localPlayer,"cr") == 1 then
                                                 if isMouseInPosition(1500, 369, 120, 120) and getKeyState("mouse1") then
                                                    playSound("SFX/click.mp3")
-                                                   setPedAnimation(source, "pullup1", "TURNIK1", -1, true, false)
+                                                   setPedAnimation(localPlayer, "pullup1", "TURNIK1", -1, true, false)
                                                 end
                                                 -- الشرطة
                                              elseif getElementData(localPlayer,"cr") == 10 then
@@ -647,7 +647,7 @@ end
                                              elseif getElementData(localPlayer,"cr") == 30 then -- 1
                                                 if isMouseInPosition(1500, 369, 120, 120) and getKeyState("mouse1") then
                                                    playSound("SFX/click.mp3")
-                                                   setPedAnimation( source, "BEACH", "SitnWait_loop_W", -1, true, false, false )
+                                                   setPedAnimation( localPlayer, "BEACH", "SitnWait_loop_W", -1, true, false, false )
                                                 end
                                              end
                                           end
@@ -679,7 +679,7 @@ end
                                              elseif getElementData(localPlayer,"cr") == 30 then
                                                 if isMouseInPosition(1369, 498, 120, 120) and getKeyState("mouse1") then
                                                    playSound("SFX/click.mp3")
-                                                   setPedAnimation( source, "BEACH", "ParkSit_M_loop", -1, true, false, false )
+                                                   setPedAnimation( localPlayer, "BEACH", "ParkSit_M_loop", -1, true, false, false )
                                                 end
                                              end
                                           end
@@ -711,7 +711,7 @@ end
                                              elseif getElementData(localPlayer,"cr") == 30 then
                                                 if isMouseInPosition(1500, 498, 120, 120) and getKeyState("mouse1") then
                                                    playSound("SFX/click.mp3")
-                                                   setPedAnimation( source, "BEACH", "ParkSit_W_loop", -1, true, false, false )
+                                                   setPedAnimation( localPlayer, "BEACH", "ParkSit_W_loop", -1, true, false, false )
                                                 end
                                              end
                                           end
@@ -731,7 +731,7 @@ end
                                              elseif getElementData(localPlayer,"cr") == 10 then
                                                 if isMouseInPosition(1369, 627, 120, 120) and getKeyState("mouse1") then
                                                    playSound("SFX/click.mp3")
-                                                   setPedAnimation(source, "tutus", "tutus1", -1, true, false)
+                                                   setPedAnimation(localPlayer, "tutus", "tutus1", -1, true, false)
                                                 end
                                              end
                                           end
@@ -751,7 +751,7 @@ end
                                              elseif getElementData(localPlayer,"cr") == 10 then
                                                 if isMouseInPosition(1500, 627, 120, 120) and getKeyState("mouse1") then
                                                    playSound("SFX/click.mp3")
-                                                   setPedAnimation(source, "newAnimBlock2", "continencia", -1, true, false)
+                                                   setPedAnimation(localPlayer, "newAnimBlock2", "continencia", -1, true, false)
                                                 end
                                              end
                                           end
@@ -771,7 +771,7 @@ end
                                              elseif getElementData(localPlayer,"cr") == 10 then
                                                 if isMouseInPosition(1369, 756, 120, 120) and getKeyState("mouse1") then
                                                    playSound("SFX/click.mp3")
-                                                   setPedAnimation(source, "policeanim11", "durus_gta", -1, true, false, false, false)
+                                                   setPedAnimation(localPlayer, "policeanim11", "durus_gta", -1, true, false, false, false)
                                                 end
                                              end
                                           end
