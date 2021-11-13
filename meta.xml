@@ -40,14 +40,13 @@
     <file src="SFX/whistle.mp3" />
 	<file src="Files/anim.ifp"/>
 	<file src="Files/break.ifp"/>
-	<file src="Files/pushup.ifp"/>
 	<file src="Files/weppos1.ifp"/>
 	<file src="Files/weppos2.ifp"/>	
 	<file src="Files/sur.ifp"/>
 	<file src="Files/policeanim1.ifp"/>
 	<file src="Files/pullup.ifp"/>
 	<file src="Files/otur.ifp" cache = "false" />
-	<file src="Files/abdominal.ifp" cache = "false" />
+	<file src="Files/abdominalandpushup.ifp" cache = "false" />
 	<script src="swhistle.lua" type="server" />
     <script src="cwhistle.lua" type="client" cache="false" />
 	<script src="smain.lua" type="server" />

@@ -28,6 +28,16 @@ painel = {
 }
 
 
+engineLoadIFP ("Files/sur.ifp", "newAnimBlockFMM")
+engineLoadIFP( "Files/abdominalandpushup.ifp", "abdominalandpushup" )
+engineLoadIFP( "Files/otur.ifp", "otur" )
+engineLoadIFP( "Files/break.ifp", "yaslan" )
+engineLoadIFP( "Files/pullup.ifp", "pullup1" )
+engineLoadIFP( "Files/weppos1.ifp", "tutus" )
+engineLoadIFP( "Files/weppos2.ifp", "newAnimBlock2" )
+engineLoadIFP( "Files/policeanim1.ifp", "policeanim11" )
+engineLoadIFP( "Files/anim.ifp", "newAnimBlock" )
+
 function exer()
    dxDrawImage(702, 719, 473, 398, "Images/exer.png", 0, 0, 0, tocolor(255, 255, 255, 255), true)
 end
@@ -262,7 +272,27 @@ end
                                                    elseif isCursorOnElement(botX+sizeX+665, botX2+sizeX2+150, 120, 120) then
                                                       playSound("SFX/click2.mp3")
                                                       triggerServerEvent("anim.smoke", localPlayer)
-                                                   elseif isCursorOnElement(botX+sizeX+760, botX2+sizeX2+230, 120, 120) then
+                                                   elseif isCursorOnElement(botX+sizeX+760, botX2+sizeX2+230, 120, 120) then -- تمارين
+                                                      if getElementData(localPlayer,"cr") == 1 then -- لو كانت التمارين مفتوحة
+                                                      elseif getElementData(localPlayer,"cr") == 20 then -- لو كان الرقص مفتوح
+                                                         setElementData(localPlayer,"cr",1)
+                                                         playSound("SFX/click2.mp3")
+                                                         addEventHandler("onClientRender", root, numbers7)
+                                                         addEventHandler("onClientRender", root, numbers8)
+                                                         addEventHandler("onClientRender", root, numbers9)
+                                                         addEventHandler("onClientRender", root, numbers10)
+                                                      elseif getElementData(localPlayer,"cr") == 30 then -- لو كان الجلوس مفتوح
+                                                         setElementData(localPlayer,"cr",1)
+                                                         playSound("SFX/click2.mp3")
+                                                         addEventHandler("onClientRender", root, numbers7)
+                                                         addEventHandler("onClientRender", root, numbers8)
+                                                         addEventHandler("onClientRender", root, numbers9)
+                                                         addEventHandler("onClientRender", root, numbers10)
+                                                      elseif getElementData(localPlayer,"cr") == 10 then
+                                                         setElementData(localPlayer,"cr",1)
+                                                         playSound("SFX/click2.mp3")
+                                                         addEventHandler("onClientRender", root, numbers10)                       
+                                                      else
                                                       setElementData(localPlayer,"cr",1) -- تمارين
                                                       playSound("SFX/click2.mp3")
                                                       addEventHandler("onClientRender", root, numbers)
@@ -275,12 +305,27 @@ end
                                                       addEventHandler("onClientRender", root, numbers8)
                                                       addEventHandler("onClientRender", root, numbers9)
                                                       addEventHandler("onClientRender", root, numbers10)
-                                                   elseif isCursorOnElement(botX+sizeX+750, botX2+sizeX2+350, 120, 120) then
+                                                      end
+                                                   elseif isCursorOnElement(botX+sizeX+750, botX2+sizeX2+350, 120, 120) then -- رقص
+                                                      if getElementData(localPlayer,"cr") == 1 then
+                                                         playSound("SFX/click2.mp3")
+                                                         setElementData(localPlayer,"cr",20)
                                                       removeEventHandler("onClientRender", root, numbers7)
                                                       removeEventHandler("onClientRender", root, numbers8)
                                                       removeEventHandler("onClientRender", root, numbers9)
                                                       removeEventHandler("onClientRender", root, numbers10)
-                                                      setElementData(localPlayer,"cr",20) -- رقص
+                                                      elseif getElementData(localPlayer,"cr") == 20 then
+                                                      elseif getElementData(localPlayer,"cr") == 10 then
+                                                      playSound("SFX/click2.mp3")
+                                                      setElementData(localPlayer,"cr",20)
+                                                      removeEventHandler("onClientRender", root, numbers7)
+                                                       removeEventHandler("onClientRender", root, numbers8)
+                                                       removeEventHandler("onClientRender", root, numbers9)
+                                                      elseif getElementData(localPlayer,"cr") == 30 then
+                                                         playSound("SFX/click2.mp3")
+                                                         setElementData(localPlayer,"cr",20)
+                                                      else
+                                                      setElementData(localPlayer,"cr",20)
                                                       playSound("SFX/click2.mp3")
                                                       addEventHandler("onClientRender", root, numbers)
                                                       addEventHandler("onClientRender", root, numbers2)
@@ -288,8 +333,25 @@ end
                                                       addEventHandler("onClientRender", root, numbers4)
                                                       addEventHandler("onClientRender", root, numbers5)
                                                       addEventHandler("onClientRender", root, numbers6)
-                                                   elseif isCursorOnElement(botX+sizeX+665, botX2+sizeX2+450, 120, 120) then
+                                                      end
+                                                   elseif isCursorOnElement(botX+sizeX+665, botX2+sizeX2+450, 120, 120) then -- شرطة
+                                                      if getElementData(localPlayer,"cr") == 1 then
+                                                         setElementData(localPlayer,"cr",10)
                                                       removeEventHandler("onClientRender", root, numbers10)
+                                                      elseif getElementData(localPlayer,"cr") == 20 then
+                                                         setElementData(localPlayer,"cr",10)
+                                                         playSound("SFX/click2.mp3")
+                                                         addEventHandler("onClientRender", root, numbers7)
+                                                         addEventHandler("onClientRender", root, numbers8)
+                                                         addEventHandler("onClientRender", root, numbers9)
+                                                      elseif getElementData(localPlayer,"cr") == 10 then
+                                                      elseif getElementData(localPlayer,"cr") == 30 then
+                                                         setElementData(localPlayer,"cr",10)
+                                                         playSound("SFX/click2.mp3")
+                                                         addEventHandler("onClientRender", root, numbers7)
+                                                         addEventHandler("onClientRender", root, numbers8)
+                                                         addEventHandler("onClientRender", root, numbers9)
+                                                      else
                                                       setElementData(localPlayer,"cr",10) -- شرطة
                                                       playSound("SFX/click2.mp3")
                                                       addEventHandler("onClientRender", root, numbers)
@@ -301,19 +363,35 @@ end
                                                       addEventHandler("onClientRender", root, numbers7)
                                                       addEventHandler("onClientRender", root, numbers8)
                                                       addEventHandler("onClientRender", root, numbers9)
-                                                   elseif isCursorOnElement(botX+sizeX+440, botX2+sizeX2+450, 120, 120) then
+                                                      end
+                                                   elseif isCursorOnElement(botX+sizeX+440, botX2+sizeX2+450, 120, 120) then -- جلوس
+                                                      if getElementData(localPlayer,"cr") == 1 then
+                                                         playSound("SFX/click2.mp3")
+                                                      setElementData(localPlayer,"cr",30) -- جلوس
                                                       removeEventHandler("onClientRender", root, numbers7)
                                                       removeEventHandler("onClientRender", root, numbers8)
                                                       removeEventHandler("onClientRender", root, numbers9)
                                                       removeEventHandler("onClientRender", root, numbers10)
-                                                      setElementData(localPlayer,"cr",30) -- جلوس
+                                                      elseif getElementData(localPlayer,"cr") == 20 then
+                                                         playSound("SFX/click2.mp3")
+                                                         setElementData(localPlayer,"cr",30)
+                                                      elseif getElementData(localPlayer,"cr") == 10 then
                                                       playSound("SFX/click2.mp3")
+                                                      setElementData(localPlayer,"cr",30)
+                                                      removeEventHandler("onClientRender", root, numbers7)
+                                                      removeEventHandler("onClientRender", root, numbers8)
+                                                      removeEventHandler("onClientRender", root, numbers9)
+                                                      elseif getElementData(localPlayer,"cr") == 30 then
+                                                   else
+                                                      playSound("SFX/click2.mp3")
+                                                      setElementData(localPlayer,"cr",30)
                                                       addEventHandler("onClientRender", root, numbers)
                                                       addEventHandler("onClientRender", root, numbers2)
                                                       addEventHandler("onClientRender", root, numbers3)
                                                       addEventHandler("onClientRender", root, numbers4)
                                                       addEventHandler("onClientRender", root, numbers5)
                                                       addEventHandler("onClientRender", root, numbers6)
+                                                   end
                                                    elseif isCursorOnElement(botX+sizeX+360, botX2+sizeX2+350, 120, 120) then
                                                       playSound("SFX/click2.mp3")
                                                       if getElementData(localPlayer, "handsup2") == false then
@@ -335,7 +413,7 @@ end
                                                       playSound("SFX/click2.mp3")
                                                       if getElementData(localPlayer, "downnn2") == false then
                                                          setElementData(localPlayer, "downnn2", true)
-                                                         ifpFM = engineLoadIFP ("Files/sur.ifp", "newAnimBlockFMM")
+                                                         ifpFM = 
                                                          setPedAnimation(source, "newAnimBlockFMM", "render", -1, false, false, false,true)
                                                       else
                                                          setElementData(localPlayer, "downnn2", false)
@@ -368,6 +446,7 @@ end
                                              if getElementData(localPlayer,"status111") == 0 then return end
                                              addEventHandler("onClientRender", root, painelanim)
                                           else
+                                             setElementData(localPlayer,"cr",0)
                                              removeEventHandler("onClientRender", root, painelanim)
                                              removeEventHandler("onClientRender", root, exer)
                                              removeEventHandler("onClientRender", root, numbers)
@@ -421,14 +500,13 @@ end
                                        function ()
                                           setElementData(localPlayer,"status111",0)
                                           setElementData(localPlayer,"cr",0)
-                                          setElementData(localPlayer,"aim1",1)
-                                          setElementData(localPlayer, "sitting", 1)
-                                          setElementData(localPlayer, "power2", 1)
-                                          setElementData(localPlayer, "downnn2", false)
-                                          setElementData(localPlayer,"dance1",1)
-                                          setElementData(localPlayer,"police1",1)
-                                          local info2 = getElementData(localPlayer,"dance1")
+                                       end
+                                       )
 
+                                       addEventHandler( "onClientResourceStop", getRootElement(),
+                                       function ()
+                                          setElementData(localPlayer,"status111",0)
+                                          setElementData(localPlayer,"cr",0)
                                        end
                                        )
 
@@ -453,8 +531,7 @@ end
                                              if getElementData(localPlayer,"cr") == 1 then -- 1
                                                 if isMouseInPosition(1369, 240, 120, 120) and getKeyState("mouse1") then
                                                    playSound("SFX/click.mp3")
-                                                   local ifp = engineLoadIFP( "Files/abdominal.ifp", "abdominal1" )
-                                                   setPedAnimation(localPlayer, "abdominal1", "Pres_2", -1, true, false)
+                                                   setPedAnimation(localPlayer, "abdominalandpushup", "Pres_2", -1, true, false)
                                                 end
                                                 -- الشرطة
                                              elseif getElementData(localPlayer,"cr") == 10 then -- 1
@@ -488,8 +565,7 @@ end
                                              if getElementData(localPlayer,"cr") == 1 then
                                                 if isMouseInPosition(1500, 240, 120, 120) and getKeyState("mouse1") then
                                                    playSound("SFX/click.mp3")
-                                                   local ifp = engineLoadIFP( "Files/pushup.ifp", "sinav" )
-                                                   setPedAnimation(source, "sinav", "Otji_2", -1, true, false)
+                                                   setPedAnimation(source, "abdominalandpushup", "Otji_2", -1, true, false)
                                                 end
                                                 -- الشرطة
                                              elseif getElementData(localPlayer,"cr") == 10 then
@@ -507,7 +583,7 @@ end
                                              elseif getElementData(localPlayer,"cr") == 30 then -- 1
                                                 if isMouseInPosition(1500, 240, 120, 120) and getKeyState("mouse1") then
                                                    playSound("SFX/click.mp3")
-                                                   local ifp = engineLoadIFP( "Files/otur.ifp", "otur" )
+                                                   
                                                    setPedAnimation(source, "otur", "WEAPON_crouch", -1, true, false)
                                                 end
                                              end
@@ -523,7 +599,6 @@ end
                                              if getElementData(localPlayer,"cr") == 1 then
                                                 if isMouseInPosition(1369, 369, 120, 120) and getKeyState("mouse1") then
                                                    playSound("SFX/click.mp3")
-                                                   local ifp = engineLoadIFP( "Files/break.ifp", "yaslan" )
                                                    setPedAnimation(source, "yaslan", "Plyrlean_loop", -1, true, false)
                                                 end
                                                 -- الشرطة
@@ -555,7 +630,6 @@ end
                                              if getElementData(localPlayer,"cr") == 1 then
                                                 if isMouseInPosition(1500, 369, 120, 120) and getKeyState("mouse1") then
                                                    playSound("SFX/click.mp3")
-                                                   local ifp = engineLoadIFP( "Files/pullup.ifp", "pullup1" )
                                                    setPedAnimation(source, "pullup1", "TURNIK1", -1, true, false)
                                                 end
                                                 -- الشرطة
@@ -625,7 +699,6 @@ end
                                              elseif getElementData(localPlayer,"cr") == 10 then
                                                 if isMouseInPosition(1500, 498, 120, 120) and getKeyState("mouse1") then
                                                    playSound("SFX/click.mp3")
-                                                   local ifp = engineLoadIFP( "Files/anim.ifp", "newAnimBlock" )
                                                    setPedAnimation(localPlayer, "newAnimBlock", "continencia", -1, false, true, false, false)
                                                 end
                                                 -- الرقص
@@ -658,7 +731,6 @@ end
                                              elseif getElementData(localPlayer,"cr") == 10 then
                                                 if isMouseInPosition(1369, 627, 120, 120) and getKeyState("mouse1") then
                                                    playSound("SFX/click.mp3")
-                                                   local ifp = engineLoadIFP( "Files/weppos1.ifp", "tutus" )
                                                    setPedAnimation(source, "tutus", "tutus1", -1, true, false)
                                                 end
                                              end
@@ -679,7 +751,6 @@ end
                                              elseif getElementData(localPlayer,"cr") == 10 then
                                                 if isMouseInPosition(1500, 627, 120, 120) and getKeyState("mouse1") then
                                                    playSound("SFX/click.mp3")
-                                                   local ifp = engineLoadIFP( "Files/weppos2.ifp", "newAnimBlock2" )
                                                    setPedAnimation(source, "newAnimBlock2", "continencia", -1, true, false)
                                                 end
                                              end
@@ -700,7 +771,6 @@ end
                                              elseif getElementData(localPlayer,"cr") == 10 then
                                                 if isMouseInPosition(1369, 756, 120, 120) and getKeyState("mouse1") then
                                                    playSound("SFX/click.mp3")
-                                                   local ifp = engineLoadIFP( "Files/policeanim1.ifp", "policeanim11" )
                                                    setPedAnimation(source, "policeanim11", "durus_gta", -1, true, false, false, false)
                                                 end
                                              end
