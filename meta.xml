@@ -1,5 +1,5 @@
 <meta>
-    <info name="Animations Panel" author="Mohab" type="script" version="1.0"></info>
+    <info author="Mohab" name="Animations Panel" version="1.1" type="script" ></info>
     <file src="Images/cancel.png" />
 	<file src="Images/chat.png" />
 	<file src="Images/sur.png" />
@@ -37,8 +37,6 @@
 	<file src="Images/chat2.png" />
 	<file src="SFX/click.mp3" />
 	<file src="SFX/click2.mp3" />
-    <script src="swhistle.lua" type="server" />
-    <script src="cwhistle.lua" type="client" cache="false" />
     <file src="SFX/whistle.mp3" />
 	<file src="Files/anim.ifp"/>
 	<file src="Files/break.ifp"/>
@@ -50,6 +48,8 @@
 	<file src="Files/pullup.ifp"/>
 	<file src="Files/otur.ifp" cache = "false" />
 	<file src="Files/abdominal.ifp" cache = "false" />
+	<script src="swhistle.lua" type="server" />
+    <script src="cwhistle.lua" type="client" cache="false" />
 	<script src="smain.lua" type="server" />
 	<script src="cmain.lua" type="client" validate="true" cache="false" protected="true" />
 </meta>
