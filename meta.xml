@@ -1,0 +1,55 @@
+<meta>
+    <info name="Animations Panel" author="Mohab" type="script" version="1.0"></info>
+    <file src="Images/cancel.png" />
+	<file src="Images/chat.png" />
+	<file src="Images/sur.png" />
+	<file src="Images/cop.png" />
+	<file src="Images/fuck.png" />
+	<file src="Images/handsup.png" />
+	<file src="Images/exercises.png" />
+	<file src="Images/smoke.png" />
+	<file src="Images/sitting.png" />
+	<file src="Images/smile.png" />
+	<file src="Images/dance.png" />
+	<file src="Images/mouse.png" />
+	<file src="Images/fall.png" />
+	<file src="Images/1.png" />
+	<file src="Images/2.png" />
+	<file src="Images/3.png" />
+	<file src="Images/4.png" />
+	<file src="Images/5.png" />
+	<file src="Images/6.png" />
+	<file src="Images/7.png" />
+	<file src="Images/8.png" />
+	<file src="Images/9.png" />
+	<file src="Images/10.png" />
+	<file src="Images/exer.png" />
+	<file src="Images/smoke2.png" />
+	<file src="Images/fuck2.png" />
+	<file src="Images/win.png" />
+	<file src="Images/fall2.png" />
+	<file src="Images/dance2.png" />
+	<file src="Images/handsup2.png" />
+	<file src="Images/set.png" />
+	<file src="Images/sur2.png" />
+	<file src="Images/police.png" />
+	<file src="Images/cancel2.png" />
+	<file src="Images/chat2.png" />
+	<file src="SFX/click.mp3" />
+	<file src="SFX/click2.mp3" />
+    <script src="swhistle.lua" type="server" />
+    <script src="cwhistle.lua" type="client" cache="false" />
+    <file src="SFX/whistle.mp3" />
+	<file src="Files/anim.ifp"/>
+	<file src="Files/break.ifp"/>
+	<file src="Files/pushup.ifp"/>
+	<file src="Files/weppos1.ifp"/>
+	<file src="Files/weppos2.ifp"/>	
+	<file src="Files/sur.ifp"/>
+	<file src="Files/policeanim1.ifp"/>
+	<file src="Files/pullup.ifp"/>
+	<file src="Files/otur.ifp" cache = "false" />
+	<file src="Files/abdominal.ifp" cache = "false" />
+	<script src="smain.lua" type="server" />
+	<script src="cmain.lua" type="client" validate="true" cache="false" protected="true" />
+</meta>
