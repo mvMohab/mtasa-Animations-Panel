@@ -1,4 +1,192 @@
+local animEnable = {}
+local syncPlayers = {}
+
+
+
+addEvent("pullup",true)
+addEventHandler("pullup",root,
+	function(player)
+		if (not animEnable[player]) then
+			animEnable[player] = true
+			triggerClientEvent(syncPlayers, "pullup", player, true)
+		else
+			animEnable[player] = false
+			triggerClientEvent(syncPlayers, "pullup", player, true)
+		end
+	end
+)
+
+addEvent("policeanim",true)
+addEventHandler("policeanim",root,
+	function(player)
+		if (not animEnable[player]) then
+			animEnable[player] = true
+			triggerClientEvent(syncPlayers, "policeanim", player, true)
+		else
+			animEnable[player] = false
+			triggerClientEvent(syncPlayers, "policeanim", player, true)
+		end
+	end
+)
+
+addEvent("t7ya2",true)
+addEventHandler("t7ya2",root,
+	function(player)
+		if (not animEnable[player]) then
+			animEnable[player] = true
+			triggerClientEvent(syncPlayers, "t7ya2", player, true)
+		else
+			animEnable[player] = false
+			triggerClientEvent(syncPlayers, "t7ya2", player, true)
+		end
+	end
+)
+
+addEvent("t7ya1",true)
+addEventHandler("t7ya1",root,
+	function(player)
+		if (not animEnable[player]) then
+			animEnable[player] = true
+			triggerClientEvent(syncPlayers, "t7ya1", player, true)
+		else
+			animEnable[player] = false
+			triggerClientEvent(syncPlayers, "t7ya1", player, true)
+		end
+	end
+)
+
+addEvent("break",true)
+addEventHandler("break",root,
+	function(player)
+		if (not animEnable[player]) then
+			animEnable[player] = true
+			triggerClientEvent(syncPlayers, "break", player, true)
+		else
+			animEnable[player] = false
+			triggerClientEvent(syncPlayers, "break", player, true)
+		end
+	end
+)
+
+addEvent("weppos2",true)
+addEventHandler("weppos2",root,
+	function(player)
+		if (not animEnable[player]) then
+			animEnable[player] = true
+			triggerClientEvent(syncPlayers, "weppos2", player, true)
+		else
+			animEnable[player] = false
+			triggerClientEvent(syncPlayers, "weppos2", player, true)
+		end
+	end
+)
+
+addEvent("weppos1",true)
+addEventHandler("weppos1",root,
+	function(player)
+		if (not animEnable[player]) then
+			animEnable[player] = true
+			triggerClientEvent(syncPlayers, "weppos1", player, true)
+		else
+			animEnable[player] = false
+			triggerClientEvent(syncPlayers, "weppos1", player, true)
+		end
+	end
+)
+
+addEvent("pushup",true)
+addEventHandler("pushup",root,
+	function(player)
+		if (not animEnable[player]) then
+			animEnable[player] = true
+			triggerClientEvent(syncPlayers, "pushup", player, true)
+		else
+			animEnable[player] = false
+			triggerClientEvent(syncPlayers, "pushup", player, true)
+		end
+	end
+)
+
+addEvent("sit2",true)
+addEventHandler("sit2",root,
+function(player)
+	if (not animEnable[player]) then
+		animEnable[player] = true
+		triggerClientEvent(syncPlayers, "sit2", player, true)
+	else
+		animEnable[player] = false
+		triggerClientEvent(syncPlayers, "sit2", player, true)
+	end
+end)
+
+addEvent("abdominal",true)
+addEventHandler("abdominal",root,
+	function(player)
+		if (not animEnable[player]) then
+			animEnable[player] = true
+			triggerClientEvent(syncPlayers, "abdominal", player, true)
+		else
+			animEnable[player] = false
+			triggerClientEvent(syncPlayers, "abdominal", player, true)
+		end
+	end
+)
+
+addEvent("sur",true)
+addEventHandler("sur",root,
+	function(player)
+		if (not animEnable[player]) then
+			animEnable[player] = true
+			triggerClientEvent(syncPlayers, "sur", player, true)
+		else
+			animEnable[player] = false
+			triggerClientEvent(syncPlayers, "sur", player, true)
+		end
+	end
+)
+
+addEvent("onClientSync", true )
+addEventHandler("onClientSync", resourceRoot,
+    function()
+        table.insert(syncPlayers, client)
+		for player, enable in ipairs(animEnable) do
+			if (enable) then
+				triggerClientEvent(client, "sur", player, true)
+				triggerClientEvent(client, "t7ya2", player, true)
+				triggerClientEvent(client, "t7ya1", player, true)
+				triggerClientEvent(client, "policeanim", player, true)
+				triggerClientEvent(client, "pullup", player, true)
+				triggerClientEvent(client, "break", player, true)
+				triggerClientEvent(client, "weppos1", player, true)
+				triggerClientEvent(client, "pushup", player, true)
+				triggerClientEvent(client, "sit2", player, true)
+				triggerClientEvent(client, "abdominal", player, true)
+			end
+		end
+    end 
+)
+
+addEventHandler("onPlayerQuit", root,
+    function()
+        for i, player in ipairs(syncPlayers) do
+            if source == player then 
+                table.remove(syncPlayers, i)
+                break
+            end 
+        end
+        if (animEnable[source] == true or animEnable[source] == false) then animEnable[source] = nil end
+    end
+)
+
 anim = {}
+
+
+
+function anim.otur1()
+	setPedAnimation(source, "otur", "WEAPON_crouch", -1, true, false)
+end
+addEvent("anim.otur1", true)
+addEventHandler("anim.otur1", root, anim.otur1)
 
 function anim.fuck()
 	setPedAnimation(source, "RIOT", "RIOT_FUKU", -1, false, false, true, false)
@@ -272,3 +460,7 @@ FightC_1
 FightC_2
 FightC_3
 FightC_M]]--
+
+
+
+

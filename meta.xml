@@ -1,5 +1,5 @@
 <meta>
-    <info author="Mohab" name="Animations Panel" version="1.2" type="script" ></info>
+    <info author="Mohab" name="Animations Panel" version="1.3" type="script" ></info>
     <file src="Images/cancel.png" />
 	<file src="Images/chat.png" />
 	<file src="Images/sur.png" />
@@ -38,17 +38,19 @@
 	<file src="SFX/click.mp3" />
 	<file src="SFX/click2.mp3" />
     <file src="SFX/whistle.mp3" />
-	<file src="Files/anim.ifp"/>
 	<file src="Files/break.ifp"/>
 	<file src="Files/weppos1.ifp"/>
-	<file src="Files/weppos2.ifp"/>	
+	<file src="Files/weppos2.ifp"/>
+	<file src="Files/t7ya1.ifp"/>	
+	<file src="Files/t7ya2.ifp"/>	
 	<file src="Files/sur.ifp"/>
-	<file src="Files/policeanim1.ifp"/>
+	<file src="Files/policeanim.ifp"/>
 	<file src="Files/pullup.ifp"/>
-	<file src="Files/otur.ifp" cache = "false" />
+	<file src="Files/sit.ifp"/>
 	<file src="Files/abdominalandpushup.ifp" cache = "false" />
 	<script src="swhistle.lua" type="server" />
     <script src="cwhistle.lua" type="client" cache="false" />
 	<script src="smain.lua" type="server" />
 	<script src="cmain.lua" type="client" validate="true" cache="false" protected="true" />
+	<min_mta_version server="1.3.0-9.04570" client="1.3.0-9.04570" />
 </meta>
